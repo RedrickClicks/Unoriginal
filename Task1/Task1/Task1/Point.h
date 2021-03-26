@@ -22,77 +22,72 @@ public:
 	 * \brief Конструктор копирования
 	 * \param other Точка
 	 */
-	Point(const Point& other) {};
+	Point(const Point& other);
 
 	/**
 	 * \brief Деструктор
 	 */
 	~Point();
 
+
+
 	/**
 	 * \brief Метод, возвращающий координату х
 	 * \return Координата х
 	 */
-	double GetX() const {};
+	double GetX() const;
 
 	/**
 	 * \brief Метод, возвращающий координату у
 	 * \return Координата у
 	 */
-	double GetY() const {};
+	double GetY() const;
 
 	/**
-	 * \brief Метод, возвращающий угол 
-	 * \return угол
+	 * \brief Метод, возвращающий новую координату точки на оси х 
+	 * \return Новая координата точки на оси х
 	 */
-	double GetAngle() const{};
+	double GetNewX() const;
 
 	/**
-	 * \brief Метод, возвращающий координату перемещения точки по оси х 
-	 * \return Координата перемещения точки по оси х
+	 * \brief Метод, возвращающий новую координату точки на оси у
+	 * \return Новая координата точки на оси у
 	 */
-	double GetToX() const {};
+	double GetNewY() const;
 
 	/**
-	 * \brief Метод, возвращающий координату перемещения точки по оси у
-	 * \return Координата перемещения точки по оси у
+	 * \brief Представление точки в виде полярных координат
+	 * \return Преобразование координат точки из декартовой системы координат в полярную
 	 */
-	double GetToY() const {};
+	Point& GetPolarView() const;
 
 	/**
 	 * \brief Метод, возвращающий координаты второй точки
-	 * \return Координаты второй точки
+	 * \return Координаты второй точки для вычисления расстояния между двумя точками
 	 */
-	Point& GetPoint2() const {};
+	Point& GetPoint2() const;
+
 
 
 	/**
 	 * \brief Метод перемещения точки по оси х
-	 * \param other Координата х
-	 * \return Третья (результат) точка
+	 * \param other Новая координата х
+	 * \return Новая (результат) точка
 	 */
-	Point& MoveX(const Point& other) const {};
+	Point& MoveX(const Point& other) const;
 
 	/**
 	 * \brief Метод перемещения точки по оси у
-	 * \param other Координата у
-	 * \return Третья (результат) точка
+	 * \param other Новая координата у
+	 * \return Новая (результат) точка
 	 */
-	Point& MoveY(const Point& other) const {};
-
-	/**
-	 * \brief Метод преобразования в полярные координаты
-	 * \param other Угол
-	 * \return Третья (результат) точка
-	 */
-	Point& Polar(const Point& other) const {};
-
+	Point& MoveY(const Point& other) const;
 
 	/**
 	 * \brief Метод определения расстояния от точки до начала координат
 	 * \return Расстояние от точки до начала координат
 	 */
-	double Distance() const {};
+	double GetDistanceToOrigin() const;
 
 
 	/**
@@ -100,7 +95,7 @@ public:
 	 * \param other Координаты второй точки
 	 * \return Расстояние между двумя точками
 	 */
-	double Range(const Point& other) const {};
+	double GetDistanceToPoint(const Point& other) const;
 
 
 	/**
@@ -108,7 +103,7 @@ public:
 	 * \param other Координаты второй точки
 	 * \return Результат сравнения на совпадение и не совпадение координат двух точек
 	 */
-	bool Mismatch(const Point& other) const {};
+	bool AreEqual(const Point& other) const;
 	
 private:
 	double x;
