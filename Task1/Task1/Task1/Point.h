@@ -106,6 +106,7 @@ public:
 	bool AreEqual(const Point& other) const;
 	
 
+
 private:
 	double x;
 	double y;
