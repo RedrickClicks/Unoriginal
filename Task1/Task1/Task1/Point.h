@@ -105,8 +105,11 @@ public:
 	 */
 	bool AreEqual(const Point& other) const;
 	
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> b8375ef15d5ead5f8863caf3cb865d67aeb8b5e4
 private:
 	double x;
 	double y;
