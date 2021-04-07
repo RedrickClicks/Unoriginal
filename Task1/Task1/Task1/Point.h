@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include <string>
 
 /**
  * \brief Класс Точка
@@ -9,7 +10,7 @@ public:
 	/**
 	 * \brief Конструктор по умолчанию
 	 */
-	Point() {};
+	Point();
 
 	/**
 	 * \brief Конструктор с параметрами
@@ -44,22 +45,22 @@ public:
 	double GetY() const;
 
 	/**
-	 * \brief Метод, возвращающий новую координату точки на оси х
+	 * \brief Метод перемещения точки на оси х
 	 * \return Новая координата точки на оси х
 	 */
-	double GetNewX() const;
+	double SetNewX() const;
 
 	/**
-	 * \brief Метод, возвращающий новую координату точки на оси у
+	 * \brief Метод перемещения точки на оси у
 	 * \return Новая координата точки на оси у
 	 */
-	double GetNewY() const;
+	double SetNewY() const;
 
 	/**
 	 * \brief Представление точки в виде полярных координат
 	 * \return Преобразование координат точки из декартовой системы координат в полярную
 	 */
-	Point& GetPolarView() const;
+	std::string GetPolarView() const;
 
 	/**
 	 * \brief Метод, возвращающий координаты второй точки
@@ -67,21 +68,6 @@ public:
 	 */
 	Point& GetPoint2() const;
 
-
-
-	/**
-	 * \brief Метод перемещения точки по оси х
-	 * \param other Новая координата х
-	 * \return Новая (результат) точка
-	 */
-	Point& MoveX(const Point& other) const;
-
-	/**
-	 * \brief Метод перемещения точки по оси у
-	 * \param other Новая координата у
-	 * \return Новая (результат) точка
-	 */
-	Point& MoveY(const Point& other) const;
 
 	/**
 	 * \brief Метод определения расстояния от точки до начала координат
