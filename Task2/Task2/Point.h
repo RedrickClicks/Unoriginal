@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+
+
 /**
  * \brief Класс Точка
  */
@@ -24,7 +26,7 @@ public:
 	/**
 	 * \brief Деструктор
 	 */
-	~Point();
+	~Point() = default;
 	/**
 	 * \brief Метод, возвращающий координату х
 	 * \return Координата х
@@ -73,6 +75,7 @@ private:
 	double x;
 	double y;
 };
+
 
 
 

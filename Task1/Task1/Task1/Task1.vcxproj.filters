@@ -15,12 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Файлы ресурсов</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Point.h">
+    <ClInclude Include="Point2.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

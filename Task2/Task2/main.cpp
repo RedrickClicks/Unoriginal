@@ -11,6 +11,8 @@ int main()
 	cin >> x;
 	cin >> y;
 	Point z(x, y);
-	answer = z.GetDistanceToOrigin();
+	//answer = z.GetPolarView();
+	//answer = z.GetDistanceToOrigin();
+	answer = z.GetDistanceToPoint();
 	cout << answer;
 }
