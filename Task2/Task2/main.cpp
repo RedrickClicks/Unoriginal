@@ -6,13 +6,12 @@ using namespace std;
 
 int main()
 {
-	double x, y;
-	std::string answer;
-	cin >> x;
-	cin >> y;
-	Point z(x, y);
-	//answer = z.GetPolarView();
-	//answer = z.GetDistanceToOrigin();
-	answer = z.GetDistanceToPoint();
-	cout << answer;
+	auto one = Point(2.64, 7);
+	auto two = Point(3, 5.6);
+	auto &ans1 = one.GetPolarView();
+	cout << ans1;
+	//auto ans2 = one.GetDistanceToOrigin();
+	//cout << ans2 << endl;
+	//auto ans3 = one.GetDistanceToPoint(two);
+	//cout << ans3;
 }

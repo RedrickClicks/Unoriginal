@@ -24,6 +24,11 @@ public:
 	 */
 	Point(const Point& other);
 	/**
+     * \brief Перемещающий конструктор
+     * \param other другое комплексное число
+	*/
+	Point(Point&& other) = default;
+	/**
 	 * \brief Деструктор
 	 */
 	~Point() = default;
