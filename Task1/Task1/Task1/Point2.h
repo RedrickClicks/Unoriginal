@@ -1,5 +1,7 @@
 ﻿#pragma once
+#include "Point.h"
 #include <string>
+#include <iostream>
 
 /**
  * \brief Класс Точка
@@ -36,7 +38,9 @@ public:
 	 * \brief Метод, возвращающий координату х
 	 * \return Координата х
 	 */
-	double GetX() const;
+	double GetX(double ValueX) {
+		x = ValueX;
+	};
 
 	/**
 	 * \brief Метод, возвращающий координату у
@@ -90,3 +94,4 @@ private:
 	double x;
 	double y;
 };
+
