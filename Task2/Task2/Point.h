@@ -46,17 +46,17 @@ public:
 	 * \brief ћетод перемещени€ точки на оси х
 	 * \return Ќова€ координата точки на оси х
 	 */
-	double SetNewX() const;
+	std::string SetNewX(double x);
 	/**
 	 * \brief ћетод перемещени€ точки на оси у
 	 * \return Ќова€ координата точки на оси у
 	 */
-	double SetNewY() const;
+	std::string SetNewY(double y);
 	/**
 	 * \brief ѕредставление точки в виде пол€рных координат
 	 * \return ѕреобразование координат точки из декартовой системы координат в пол€рную
 	 */
-	std::string& GetPolarView() const;
+	std::string GetPolarView() const;
 
 
 	/**

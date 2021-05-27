@@ -3,6 +3,7 @@
 #include <string>
 #include "Point.h"
 #include "ExtendedMath.h"
+#include <sstream>
 
 Point::Point(const double x, const double y) {
 	this->x = x;
@@ -21,16 +22,28 @@ double Point::GetY() const
 	return this->y;
 };
 
-double Point::SetNewX() const 
+std::string Point::SetNewX(double x)
 {
+	this->x = x;
+	std::stringstream buffer;
+	buffer << "(" << this->x << "; " << this->y << ")";
+	return buffer.str();
+}
 
-};
+std::string Point::SetNewY(double y)
+{
+	this->y = y;
+	std::stringstream buffer;
+	buffer << "(" << this->x << "; " << this->y << ")";
+	return buffer.str();
+}
 
-std::string& Point::GetPolarView() const 
+std::string Point::GetPolarView() const 
 {
 	double r, angle;
 	r = sqrt(this->GetX() * this->GetX() + this->GetY() * this->GetY());
-	if (this->GetX() == 0)
+	bool k = ExtMath::AreEqual(this->GetX(), 0);
+	if (k == 1)
 	{
 		angle = asin(this->GetY() / r);
 	}
@@ -38,10 +51,9 @@ std::string& Point::GetPolarView() const
 	{
 		angle = atan(this->GetY() / this->GetX());
 	};
-	std::string r_str = std::to_string(r);
-	std::string angle_str = std::to_string(angle);
-	std::string answer = "(r = " + r_str + "; angle = " + angle_str + ")";
-	return answer;
+	std::stringstream buffer;
+	buffer << "(" << "r = " << r << "; angle = " << angle << ")";
+	return buffer.str();
 };
 
 double Point::GetDistanceToOrigin() const 
@@ -56,7 +68,7 @@ double Point::GetDistanceToPoint(const Point& other) const
 
 bool Point::AreEqual(const Point& other) const
 {
-	return this->x == other.x && this->y == other.y;
+	return ExtMath::AreEqual(this->GetX(), other.GetX()) && ExtMath::AreEqual(this->GetY(), other.GetY());
 };
 
 bool operator==(const Point& lha, const Point& rha)
@@ -64,4 +76,7 @@ bool operator==(const Point& lha, const Point& rha)
 	return lha.AreEqual(rha);
 };
 
-
+std::ostream& operator<< (std::ostream& out, Point& Point) {
+	out << Point.GetPolarView();
+	return out;
+};
